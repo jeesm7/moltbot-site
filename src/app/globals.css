@@ -1,0 +1,161 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  /* Premium color palette - deep navy to warm white */
+  --color-background: oklch(0.99 0.002 250);
+  --color-foreground: oklch(0.15 0.02 250);
+  --color-card: oklch(0.99 0.002 250);
+  --color-card-foreground: oklch(0.15 0.02 250);
+  --color-popover: oklch(0.99 0.002 250);
+  --color-popover-foreground: oklch(0.15 0.02 250);
+  --color-primary: oklch(0.35 0.08 250);
+  --color-primary-foreground: oklch(0.98 0.005 250);
+  --color-secondary: oklch(0.96 0.01 250);
+  --color-secondary-foreground: oklch(0.25 0.03 250);
+  --color-muted: oklch(0.94 0.01 250);
+  --color-muted-foreground: oklch(0.45 0.02 250);
+  --color-accent: oklch(0.55 0.18 170);
+  --color-accent-foreground: oklch(0.98 0.005 250);
+  --color-destructive: oklch(0.55 0.2 25);
+  --color-destructive-foreground: oklch(0.98 0.005 250);
+  --color-border: oklch(0.92 0.01 250);
+  --color-input: oklch(0.92 0.01 250);
+  --color-ring: oklch(0.35 0.08 250);
+  --color-chart-1: oklch(0.55 0.18 170);
+  --color-chart-2: oklch(0.55 0.15 250);
+  --color-chart-3: oklch(0.55 0.12 320);
+  --color-chart-4: oklch(0.55 0.14 50);
+  --color-chart-5: oklch(0.55 0.10 200);
+  --color-sidebar: oklch(0.97 0.01 250);
+  --color-sidebar-foreground: oklch(0.15 0.02 250);
+  --color-sidebar-primary: oklch(0.35 0.08 250);
+  --color-sidebar-primary-foreground: oklch(0.98 0.005 250);
+  --color-sidebar-accent: oklch(0.94 0.01 250);
+  --color-sidebar-accent-foreground: oklch(0.25 0.03 250);
+  --color-sidebar-border: oklch(0.92 0.01 250);
+  --color-sidebar-ring: oklch(0.35 0.08 250);
+  --radius: 0.625rem;
+
+  /* Typography scale */
+  --font-display: "DM Sans", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+/* Dark mode */
+.dark {
+  --color-background: oklch(0.12 0.02 250);
+  --color-foreground: oklch(0.96 0.01 250);
+  --color-card: oklch(0.15 0.02 250);
+  --color-card-foreground: oklch(0.96 0.01 250);
+  --color-popover: oklch(0.15 0.02 250);
+  --color-popover-foreground: oklch(0.96 0.01 250);
+  --color-primary: oklch(0.65 0.15 170);
+  --color-primary-foreground: oklch(0.12 0.02 250);
+  --color-secondary: oklch(0.2 0.02 250);
+  --color-secondary-foreground: oklch(0.92 0.01 250);
+  --color-muted: oklch(0.2 0.02 250);
+  --color-muted-foreground: oklch(0.65 0.01 250);
+  --color-accent: oklch(0.55 0.18 170);
+  --color-accent-foreground: oklch(0.12 0.02 250);
+  --color-destructive: oklch(0.55 0.2 25);
+  --color-destructive-foreground: oklch(0.98 0.005 250);
+  --color-border: oklch(0.25 0.02 250);
+  --color-input: oklch(0.25 0.02 250);
+  --color-ring: oklch(0.65 0.15 170);
+  --color-sidebar: oklch(0.15 0.02 250);
+  --color-sidebar-foreground: oklch(0.96 0.01 250);
+  --color-sidebar-primary: oklch(0.65 0.15 170);
+  --color-sidebar-primary-foreground: oklch(0.12 0.02 250);
+  --color-sidebar-accent: oklch(0.2 0.02 250);
+  --color-sidebar-accent-foreground: oklch(0.92 0.01 250);
+  --color-sidebar-border: oklch(0.25 0.02 250);
+  --color-sidebar-ring: oklch(0.65 0.15 170);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "ss01", "ss02", "cv01";
+  }
+}
+
+/* Mesh gradient animation */
+@keyframes mesh-drift {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(10%, -5%) scale(1.05);
+  }
+  50% {
+    transform: translate(-5%, 10%) scale(0.95);
+  }
+  75% {
+    transform: translate(-10%, -10%) scale(1.02);
+  }
+}
+
+.mesh-gradient {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.4;
+  animation: mesh-drift 20s ease-in-out infinite;
+}
+
+.mesh-1 {
+  background: oklch(0.65 0.15 170);
+  top: -200px;
+  right: -100px;
+  animation-delay: 0s;
+}
+
+.mesh-2 {
+  background: oklch(0.55 0.12 250);
+  bottom: -150px;
+  left: -150px;
+  animation-delay: -7s;
+}
+
+.mesh-3 {
+  background: oklch(0.6 0.1 320);
+  top: 40%;
+  left: 30%;
+  width: 400px;
+  height: 400px;
+  animation-delay: -14s;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Text gradient utility */
+.text-gradient {
+  background: linear-gradient(135deg, oklch(0.35 0.08 250) 0%, oklch(0.55 0.18 170) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glass card effect */
+.glass {
+  background: oklch(0.99 0.002 250 / 0.8);
+  backdrop-filter: blur(20px);
+  border: 1px solid oklch(0.92 0.01 250 / 0.5);
+}
+
+.dark .glass {
+  background: oklch(0.15 0.02 250 / 0.8);
+  border-color: oklch(0.25 0.02 250 / 0.5);
+}
