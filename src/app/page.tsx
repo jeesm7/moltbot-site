@@ -348,6 +348,9 @@ export default function LandingPage() {
             <a href="https://openclawsetup.xyz" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               OpenClaw Setup
             </a>
+            <a href="https://cyndra.ai" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              Powered by Cyndra AI
+            </a>
             <Link href="/privacy" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               Privacy
             </Link>
