@@ -1,0 +1,28 @@
+# Moltbot
+
+> Moltbot is a managed AI assistant service. Get your own private Claude instance deployed on a dedicated cloud server, connected to all your communication channels, and fully managed.
+
+Moltbot runs on Claude by Anthropic. It provides 24/7 AI assistance that remembers context across conversations, responds on email, Slack, WhatsApp, Discord, SMS, and Telegram. Zero technical setup required - the service handles deployment, updates, and monitoring.
+
+## Main Pages
+
+- / : Homepage - Overview of Moltbot service, features, and how it works
+- /pricing : Pricing plans and what's included
+- /waitlist : Join the waitlist for early access
+
+## Features
+
+- Dedicated Claude instance on private cloud server
+- Multi-channel support (Email, Slack, WhatsApp, Discord, SMS, Telegram)
+- Enterprise security with SOC 2 compliant infrastructure
+- 24/7 availability with persistent context
+- Fully managed - no technical setup needed
+
+## Related
+
+- OpenClaw Consultant: https://openclawconsultant.com - AI consulting services
+- NovaSoft AI: https://novasoftai.com - AI automation agency
+
+## Contact
+
+Built by Jess Mason. Book a call at https://cal.com/jess-mason/openclaw-consultation
